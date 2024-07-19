@@ -8,7 +8,6 @@ enum Entrypoint {
     static func main() async throws {
         var env = try Environment.detect()
         try LoggingSystem.bootstrap(from: &env)
-        
         let app = try await Application.make(env)
 
         // This attempts to install NIO as the Swift Concurrency global executor.
